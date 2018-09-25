@@ -26,8 +26,8 @@ p {
   margin: 10px 0;
 }
 a {
-  color: #f76;
-  text-decoration: none;
+  color: #3b2d80;
+  text-decoration: underline;
 }
 input[type=text] {
   padding: 8px 12px;
