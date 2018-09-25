@@ -2,43 +2,43 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<title>IK Library: Progress Bar</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<link href="assets/ik_lib.css" rel="stylesheet" type="text/css">
 		<script src="assets/ik_utils.js"></script>
 		<script src="assets/ik_progressbar.js"></script>
 		<script>
-			
+
 			var $pb, timer;
-			
+
 			$(document).ready(function() {
-				
+
 				$pb = $("#pb").ik_progressbar({'max' : 1500});
-				
+
 			});
-			
+
 			function runTest(e) {
-				
+
 				var $elem, plugin;
-				
+
 				$elem = $pb.attr({
 					'tabindex': 0
-				}).focus(); 
+				}).focus();
 				plugin = $elem.data("ik_progressbar");
 				plugin.reset();
-				
+
 				window.timer = window.setInterval(updateProgress, 100, plugin);
 				$(e.currentTarget).prop({ "disabled": true });
-				
+
 			}
-			
+
 			function updateProgress(plugin) {
-				
+
 				var val, lbl;
-				
+
 				val = plugin.getValue();
-				
+
 				if(val < plugin.options.max) {
 					lbl = 'Loading... ' + val + 'kb (' + plugin.getPercent() + '%)';
 					plugin.setValue(val + 10);
@@ -47,9 +47,9 @@
 					lbl = 'Loading complete!';
 					$("#btnTest").prop({ "disabled": false }).focus();
 				}
-				
+
 				$('#pb_lbl').text(lbl);
-				
+
 			}
 		</script>
 	</head>
