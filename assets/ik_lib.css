@@ -25,6 +25,9 @@ footer {
 p {
   margin: 10px 0;
 }
+li {
+    line-height: 1.6rem;
+}
 a {
   color: #3b2d80;
   text-decoration: underline;
